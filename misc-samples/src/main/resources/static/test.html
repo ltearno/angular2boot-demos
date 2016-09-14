@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+
+<!-- for Angular Router library, can be removed if Router is not used -->
+<base href="/">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+
+<!-- You can arrange the title as you like -->
+<title>Angular 2 with GWT and SpringBoot !</title>
+
+<!-- css -->
+<link rel="stylesheet" href="styles.css">
+
+<!-- script files needed at runtime -->
+<script src="zone.js"></script>
+<script src="Reflect.js"></script>
+<script src="angular2-all-2.0.0-rc.6.umd.js"></script>
+
+</head>
+<body>
+	<my-app class="container">Loading...</my-app>
+</body>
+
+<script type="text/javascript">
+function MainComponent() {
+    this.title = "Main component";
+  }
+
+MainComponent.annotations = [
+    new ng.core.Component(new ng.core.ComponentMetadata({
+      selector: 'my-app',
+      template: '<h1>{{title}}</h1><my-child (em)="baby($event)"></my-child>'
+    }))
+  ];
+
+MainComponent.prototype.baby = function(event){
+	this.title += "-"
+}
+  
+function ChildComponent() {
+    this.title = "Child component";
+    this.em = new ng.core.EventEmitter()
+    //this.em.subscribe = ( yop ) => {debugger;}
+  }
+
+ChildComponent.annotations = [
+    new ng.core.Component(new ng.core.ComponentMetadata({
+      selector: 'my-child',
+      template: '<h1>{{title}}</h1><button (click)="click($event)">Click</button>',
+      outputs: ['em']
+    }))
+  ];
+
+ChildComponent.prototype.click = function(event){
+	console.log("click")
+	this.em.emit("hello")
+}
+  
+function AppModule() {
+}
+
+var metadata = new ng.core.NgModuleMetadata()
+metadata.imports = [ng.platformBrowser.BrowserModule]
+metadata.declarations = [MainComponent, ChildComponent]
+metadata.bootstrap = [MainComponent]
+
+AppModule.annotations = [ new ng.core.NgModule(metadata) ]
+
+ng.platformBrowserDynamic.platformBrowserDynamic().bootstrapModule(AppModule)
+</script>
+
+</html>
