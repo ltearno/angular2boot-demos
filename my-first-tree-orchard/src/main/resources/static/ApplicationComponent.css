@@ -1,0 +1,9 @@
+/* we want the component to occupy all host space */
+:host {
+	display: flex;
+	flex-flow: column nowrap;
+}
+
+.messages {
+	font-size: 80%;
+}
