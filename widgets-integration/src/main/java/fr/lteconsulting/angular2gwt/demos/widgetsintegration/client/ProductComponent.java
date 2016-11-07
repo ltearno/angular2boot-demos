@@ -3,7 +3,7 @@ package fr.lteconsulting.angular2gwt.demos.widgetsintegration.client;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-import fr.lteconsulting.angular2gwt.client.WidgetAdapterPanel;
+import fr.lteconsulting.angular2gwt.client.gwtintegration.WidgetAdapterPanel;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.AfterViewInit;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.ElementRef;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.OnDestroy;
@@ -45,6 +45,7 @@ public class ProductComponent implements AfterViewInit, OnDestroy
 	}
 
 	@Input
+	@JsProperty
 	public void setProduct( Product product )
 	{
 		this.product = product;
@@ -53,6 +54,7 @@ public class ProductComponent implements AfterViewInit, OnDestroy
 			form.setProduct( product );
 	}
 
+	@JsProperty
 	public Product getProduct()
 	{
 		return product;

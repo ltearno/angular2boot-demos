@@ -1,10 +1,10 @@
-package fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.widgets;
+package fr.lteconsulting.angular2gwt.demos.widgetsintegration.client;
 
+import com.google.gwt.dom.client.Style.BorderStyle;
+import com.google.gwt.dom.client.Style.Unit;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.TextBox;
-
-import fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.Product;
 
 public class ProductForm extends Composite
 {
@@ -15,13 +15,20 @@ public class ProductForm extends Composite
 	{
 		FlexTable table = new FlexTable();
 
-		table.setText( 0, 0, "Name" );
-		table.setWidget( 0, 1, nameTextBox );
+		table.setText( 0, 0, "A GWT Widget inserted into an Angular 2 component" );
+		table.getFlexCellFormatter().setColSpan( 0, 0, 2 );
 
-		table.setText( 1, 0, "Color" );
-		table.setWidget( 1, 1, colorTextBox );
+		table.setText( 1, 0, "Name" );
+		table.setWidget( 1, 1, nameTextBox );
+
+		table.setText( 2, 0, "Color" );
+		table.setWidget( 2, 1, colorTextBox );
 
 		initWidget( table );
+		
+		getElement().getStyle().setBorderColor( "black" );
+		getElement().getStyle().setBorderStyle( BorderStyle.SOLID );
+		getElement().getStyle().setBorderWidth( 1, Unit.PX );
 	}
 
 	public void setProduct( Product product )

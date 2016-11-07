@@ -5,6 +5,7 @@ import fr.lteconsulting.angular2gwt.client.interop.ng.core.Renderer;
 import fr.lteconsulting.angular2gwt.ng.core.Directive;
 import fr.lteconsulting.angular2gwt.ng.core.HostListener;
 import fr.lteconsulting.angular2gwt.ng.core.Input;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 /**
@@ -21,6 +22,7 @@ public class HighlightDirective
 	private String highlightColor = null;
 
 	@Input( name = "myHighlight" )
+	@JsProperty
 	public void setHighlightColor( String color )
 	{
 		highlightColor = color;

@@ -21,6 +21,15 @@
 		<maven.compiler.target>1.8</maven.compiler.target>
 	</properties>
 	
+	<dependencies>
+		<dependency>
+			<groupId>fr.lteconsulting</groupId>
+			<artifactId>angular2-gwt-integration</artifactId>
+			<version>1.6-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>

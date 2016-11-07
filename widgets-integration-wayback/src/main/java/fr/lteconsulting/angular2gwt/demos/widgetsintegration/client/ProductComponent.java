@@ -12,7 +12,6 @@ import com.google.gwt.user.client.ui.VerticalPanel;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.AfterViewInit;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.ElementRef;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.OnDestroy;
-import fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.widgets.ProductForm;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
 import fr.lteconsulting.angular2gwt.ng.core.Input;
 import fr.lteconsulting.angular2gwt.ng.core.ViewChild;
@@ -21,7 +20,7 @@ import jsinterop.annotations.JsType;
 
 @Component(
 		selector = "product",
-		template = "<h2 *ngIf='product'>{{product.name | uppercase}}'s details:</h2>"
+		template = "<h2 *ngIf='product'>{{product.name | uppercase}}'s details: (an Angular 2 component)</h2>"
 				+ "<div #panel></div>" )
 @JsType
 public class ProductComponent implements AfterViewInit, OnDestroy
@@ -50,6 +49,7 @@ public class ProductComponent implements AfterViewInit, OnDestroy
 	}
 
 	@Input
+	@JsProperty
 	public void setProduct( Product product )
 	{
 		this.product = product;
@@ -58,6 +58,7 @@ public class ProductComponent implements AfterViewInit, OnDestroy
 			form.setProduct( product );
 	}
 
+	@JsProperty
 	public Product getProduct()
 	{
 		return product;

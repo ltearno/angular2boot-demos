@@ -3,8 +3,8 @@ package fr.lteconsulting.client.herobio;
 import fr.lteconsulting.angular2gwt.client.interop.ng.core.OnInit;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
 import fr.lteconsulting.angular2gwt.ng.core.Input;
-import fr.lteconsulting.angular2gwt.ng.core.PropertyGetter;
 import fr.lteconsulting.client.Hero;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -19,7 +19,7 @@ public class HeroBioComponent implements OnInit
 	@Input
 	public int heroId;
 
-	@PropertyGetter
+	@JsProperty
 	Hero getHero()
 	{
 		return heroCache.hero;

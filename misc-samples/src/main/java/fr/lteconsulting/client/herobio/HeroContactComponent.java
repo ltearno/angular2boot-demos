@@ -3,9 +3,9 @@ package fr.lteconsulting.client.herobio;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
 import fr.lteconsulting.angular2gwt.ng.core.Host;
 import fr.lteconsulting.angular2gwt.ng.core.Optional;
-import fr.lteconsulting.angular2gwt.ng.core.PropertyGetter;
 import fr.lteconsulting.client.LoggerService;
 import jsinterop.annotations.JsConstructor;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -35,11 +35,7 @@ public class HeroContactComponent
 		}
 	}
 
-	/**
-	 * This @PropertyGetter annotation triggers the creation of a Js property
-	 * associated with the current getter
-	 */
-	@PropertyGetter
+	@JsProperty
 	String getMyPhoneNumber()
 	{
 		return heroCache.hero.phoneNumber;

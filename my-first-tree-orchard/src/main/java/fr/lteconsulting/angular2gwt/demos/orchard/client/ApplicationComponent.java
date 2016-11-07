@@ -2,7 +2,7 @@ package fr.lteconsulting.angular2gwt.demos.orchard.client;
 
 import fr.lteconsulting.angular2gwt.client.JsArray;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
-import fr.lteconsulting.angular2gwt.ng.core.PropertyGetter;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -37,8 +37,8 @@ public class ApplicationComponent
 
 	public JsArray<String> history = JsArray.<String> empty();
 
-	@PropertyGetter
-	String getWinner()
+	@JsProperty
+	public String getWinner()
 	{
 		if( state.crowPosition == 0 )
 			return "The crow";

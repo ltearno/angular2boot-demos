@@ -9,9 +9,9 @@ import jsinterop.annotations.JsType;
 		template = "<h1>My First Attribute Directive</h1>"
 				+ "<h4>Pick a highlight color</h4>"
 				+ "<div>"
-				+ "<input type='radio' name='colors' (click)='color=\\\"lightgreen\\\"'>Green"
-				+ "<input type='radio' name='colors' (click)='color=\\\"yellow\\\"'>Yellow"
-				+ "<input type='radio' name='colors' (click)='color=\\\"cyan\\\"'>Cyan"
+				+ "<label><input type='radio' name='colors' (click)='color=\\\"lightgreen\\\"'>Green</label>"
+				+ "<label><input type='radio' name='colors' (click)='color=\\\"yellow\\\"'>Yellow</label>"
+				+ "<label><input type='radio' name='colors' (click)='color=\\\"cyan\\\"'>Cyan</label>"
 				+ "</div>"
 				+ "Highlight color is {{color}}"
 				+ "<p [myHighlight]='color' [defaultColor]='\\\"violet\\\"'>Highlight me!</p>" )

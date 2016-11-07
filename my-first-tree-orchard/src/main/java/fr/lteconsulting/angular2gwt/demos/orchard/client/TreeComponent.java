@@ -9,8 +9,9 @@ import jsinterop.annotations.JsType;
 @Component(
 		selector = "my-tree",
 		template = "<div [class.empty]='nbFruits==0'>{{nbFruits}} fruit(s) left"
-				+ "  <button *ngIf='chooseTree && nbFruits>0'"
-				+ "    (click)='choose()'>Take a fruit</button>"
+				+ "  <div *ngIf='chooseTree && nbFruits>0'>"
+				+ "    <button (click)='choose()'>Take a fruit</button>"
+				+ "  </div>"
 				+ "</div>",
 		styleUrls = "TreeComponent.css" )
 @JsType

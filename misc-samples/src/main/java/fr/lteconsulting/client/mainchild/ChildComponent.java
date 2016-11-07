@@ -11,6 +11,7 @@ import fr.lteconsulting.angular2gwt.client.interop.ng.core.SimpleChanges;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
 import fr.lteconsulting.angular2gwt.ng.core.Input;
 import fr.lteconsulting.angular2gwt.ng.core.Output;
+import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -31,11 +32,13 @@ public class ChildComponent implements OnChanges
 	private String _name;
 
 	@Input
+	@JsProperty
 	public void setName( String name )
 	{
 		_name = name.trim().toUpperCase();
 	}
 
+	@JsProperty
 	protected String getName()
 	{
 		return _name;
