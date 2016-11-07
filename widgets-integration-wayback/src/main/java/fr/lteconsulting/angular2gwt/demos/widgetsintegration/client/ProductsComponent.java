@@ -32,7 +32,7 @@ public class ProductsComponent
 
 	public ProductsComponent( ApplicationService service )
 	{
-		products = service.products;
+		products = service.getProducts();
 	}
 
 	public void select( Product product )

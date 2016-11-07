@@ -42,11 +42,14 @@ public class AngularIntegration
 		initialized = true;
 	}
 
-	public AngularComponentContainerWidget createAngularComponent( Object componentPrototype )
+	// TODO : add typing to componentPrototype => goes back to the component type
+	public <T> AngularComponentContainerWidget<T> createAngularComponent( Object componentPrototype )
 	{
+		assert initialized : "AngularIntegration should be initialized with the application module, call init(...) first !";
+
 		ComponentFactory factory = componentFactoryResolver.resolveComponentFactory( componentPrototype );
 
-		AngularComponentContainerWidget angularComponentContainerWidget = new AngularComponentContainerWidget( factory, applicationRef );
+		AngularComponentContainerWidget<T> angularComponentContainerWidget = new AngularComponentContainerWidget<T>( factory, applicationRef );
 
 		return angularComponentContainerWidget;
 	}

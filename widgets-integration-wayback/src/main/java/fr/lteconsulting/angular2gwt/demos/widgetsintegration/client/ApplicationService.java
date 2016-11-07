@@ -8,7 +8,7 @@ import jsinterop.annotations.JsType;
 @JsType
 public class ApplicationService
 {
-	public JsArray<Product> products = JsArray.of(
+	private JsArray<Product> products = JsArray.of(
 			new Product( 1, "Table", "red" ),
 			new Product( 2, "Chair", "blue" ),
 			new Product( 3, "Arm", "green" ),
@@ -16,4 +16,9 @@ public class ApplicationService
 			new Product( 5, "Light", "brown" ),
 			new Product( 6, "Food", "black" ),
 			new Product( 7, "Box", "orange" ) );
+
+	public JsArray<Product> getProducts()
+	{
+		return products;
+	}
 }

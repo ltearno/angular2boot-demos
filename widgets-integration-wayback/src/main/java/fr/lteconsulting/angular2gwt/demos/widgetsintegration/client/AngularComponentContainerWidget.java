@@ -7,7 +7,7 @@ import fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.angular.Appl
 import fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.angular.ComponentFactory;
 import fr.lteconsulting.angular2gwt.demos.widgetsintegration.client.angular.ComponentRef;
 
-public class AngularComponentContainerWidget extends Widget
+public class AngularComponentContainerWidget<T> extends Widget
 {
 	private ComponentFactory factory;
 	private ApplicationRef applicationRef;
@@ -24,11 +24,16 @@ public class AngularComponentContainerWidget extends Widget
 	}
 
 	@SuppressWarnings( "unchecked" )
-	public <T> T getComponentInstance()
+	public T getComponentInstance()
 	{
 		return (T) componentRef.instance();
 	}
-	
+
+	public void detectChanges()
+	{
+		componentRef.changeDetectorRef.detectChanges();
+	}
+
 	public ComponentRef getComponentRef()
 	{
 		return componentRef;
@@ -43,8 +48,6 @@ public class AngularComponentContainerWidget extends Widget
 			return;
 
 		componentRef = factory.create( applicationRef.getInjector(), new Object[0], getElement() );
-
-		// componentRef.changeDetectorRef.detectChanges();
 
 		applicationRef._loadComponent( componentRef );
 	}

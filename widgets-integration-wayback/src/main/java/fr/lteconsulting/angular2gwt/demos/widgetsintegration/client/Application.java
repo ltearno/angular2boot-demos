@@ -2,6 +2,7 @@ package fr.lteconsulting.angular2gwt.demos.widgetsintegration.client;
 
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.CheckBox;
 import com.google.gwt.user.client.ui.DisclosurePanel;
 import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.RootPanel;
@@ -31,9 +32,11 @@ public class Application implements EntryPoint
 				+ "name of the product in the list for instance).<br/><br/>" );
 
 		Button button = new Button( "Create an angular component and insert it into a DisclosurePanel" );
+		CheckBox overide = new CheckBox( "Override component's data" );
 
 		VerticalPanel panel = new VerticalPanel();
 		panel.add( headerText );
+		panel.add( overide );
 		panel.add( button );
 
 		RootPanel.get().add( panel );
@@ -43,15 +46,17 @@ public class Application implements EntryPoint
 		button.addClickHandler( e -> {
 			DisclosurePanel disclosure = new DisclosurePanel( "An Angular 2 component, click to open" );
 
-			// Insert an angular component as a widget
-			AngularComponentContainerWidget angularComponentContainerWidget = AngularIntegration.get().createAngularComponent( ProductsComponent_AngularComponent.getComponentPrototype() );
+			AngularComponentContainerWidget<ProductsComponent> angularComponentContainerWidget = AngularIntegration.get().createAngularComponent( ProductsComponent_AngularComponent.getComponentPrototype() );
 
 			disclosure.setContent( angularComponentContainerWidget );
 
 			panel.add( disclosure );
 
-			((ProductsComponent) angularComponentContainerWidget.getComponentInstance()).products = products;
-			angularComponentContainerWidget.getComponentRef().changeDetectorRef.detectChanges();
+			if( overide.getValue() )
+			{
+				angularComponentContainerWidget.getComponentInstance().products = products;
+				angularComponentContainerWidget.detectChanges();
+			}
 		} );
 	}
 }
