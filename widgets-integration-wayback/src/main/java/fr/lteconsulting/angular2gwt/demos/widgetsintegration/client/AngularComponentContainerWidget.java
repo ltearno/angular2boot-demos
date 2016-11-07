@@ -1,6 +1,5 @@
 package fr.lteconsulting.angular2gwt.demos.widgetsintegration.client;
 
-import com.google.gwt.core.shared.GWT;
 import com.google.gwt.dom.client.Document;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -24,6 +23,17 @@ public class AngularComponentContainerWidget extends Widget
 		setElement( Document.get().createDivElement() );
 	}
 
+	@SuppressWarnings( "unchecked" )
+	public <T> T getComponentInstance()
+	{
+		return (T) componentRef.instance();
+	}
+	
+	public ComponentRef getComponentRef()
+	{
+		return componentRef;
+	}
+
 	@Override
 	protected void onAttach()
 	{
@@ -32,19 +42,10 @@ public class AngularComponentContainerWidget extends Widget
 		if( componentRef != null )
 			return;
 
-		try
-		{
-			componentRef = factory.create( applicationRef.getInjector(), new Object[0], getElement() );
+		componentRef = factory.create( applicationRef.getInjector(), new Object[0], getElement() );
 
-			// componentRef.changeDetectorRef.detectChanges();
+		// componentRef.changeDetectorRef.detectChanges();
 
-			applicationRef._loadComponent( componentRef );
-		}
-		catch( Exception e )
-		{
-			GWT.log( "erreur", e );
-
-		}
-		// GWT.debugger();
+		applicationRef._loadComponent( componentRef );
 	}
 }
