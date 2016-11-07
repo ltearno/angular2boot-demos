@@ -30,6 +30,7 @@
         <module>angular2gwt-demo-canvas</module>
 		<module>misc-samples</module>
 		<module>widgets-integration</module>
+		<module>widgets-integration-wayback</module>
 		<module>my-first-tree-orchard</module>
     </modules>
 	
