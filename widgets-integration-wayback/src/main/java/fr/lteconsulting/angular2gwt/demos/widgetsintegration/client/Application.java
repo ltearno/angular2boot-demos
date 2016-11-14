@@ -58,7 +58,8 @@ public class Application implements EntryPoint
 
 		button.addClickHandler( e -> {
 			// create an Angular component wrapped into a GWT compatible widget
-			AngularComponentContainerWidget<ProductsComponent> angularComponentContainerWidget = AngularIntegration.get().createAngularComponent( ProductsComponent_AngularComponent.getComponentPrototype() );
+			AngularComponentContainerWidget<ProductsComponent> angularComponentContainerWidget = 
+					AngularIntegration.get().createAngularComponent( ProductsComponent_AngularComponent.getComponentPrototype() );
 
 			// insert the component in the Widget tree
 			DisclosurePanel disclosure = new DisclosurePanel( "An Angular 2 component inside a GWT Widget, click to open" );
