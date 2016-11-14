@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<!-- for Angular Router library, can be removed if Router is not used or in Hash mode -->
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+
+<!-- You can arrange the title as you like -->
+<title>Angular 2 with GWT and SpringBoot and Materialize!</title>
+
+<!-- css and script files needed at runtime -->
+<link rel="stylesheet" href="styles.css">
+
+<!--Import Google Icon Font-->
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="materialize/js/materialize.min.js"></script>
+
+<!--<script src="es6-shim.min.js"></script>-->
+<script src="Reflect.js"></script>
+<script src="zone.js"></script>
+<script src="angular2-all.umd.js"></script>
+
+<!-- GWT application script -->
+<script src="application/application.nocache.js"></script>
+
+</head>
+<body>
+	<!-- This tag will be handled by the ApplicationComponent angular component class -->
+	<my-app class="container">Application is loading...</my-app>
+</body>
+</html>
