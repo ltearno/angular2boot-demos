@@ -1,0 +1,31 @@
+<div *ngIf='!memo'>Loading...</div>
+
+<my-flip *ngIf='memo' [flipped]='editionMode'>
+	<my-flip-front-side>
+		<div>
+			<h2>{{memo.title}}</h2>
+			<div class='memoDescription'>{{memo.description}}</div>
+			<div class="separator"></div>
+			<div style='float:right;'>
+				<a href='#memos' class="waves-effect waves-teal btn-flat">Memos list</a> 
+				<button (click)='edit()' class="waves-effect waves-teal btn"><i class="material-icons left">edit</i>Edit</button>
+			</div>
+			<div style='clear:both;'></div>
+		</div>		
+	</my-flip-front-side>
+	<my-flip-back-side>
+		<form #memoForm="ngForm" (ngSubmit)='save(memoForm.value)' novalidate>
+			<label for="title">Title <input id="title" [ngModel]='memo.title' name='title' required #title="ngModel"/></label>
+			<div [hidden]="title.valid || title.pristine" class="alert">Title should not be empty.</div>
+			<label for="description">Description
+				<textarea id="description" [ngModel]='memo.description' name='description'></textarea>
+			</label>
+			<div class="separator"></div>
+			<div style='float:right;'>
+				<button type="button" (click)='view()' class="waves-effect waves-teal btn-flat">CANCEL</button>
+				<button type="submit" [disabled]="!memoForm.form.valid" class="waves-effect waves-light btn">SAVE</button>
+			</div>
+			<div style='clear:both;'></div>
+		</form>
+	</my-flip-back-side>
+</my-flip>

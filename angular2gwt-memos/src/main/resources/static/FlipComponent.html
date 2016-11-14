@@ -1,0 +1,10 @@
+<div class="flip-container" [class.flip]='flipped'>
+	<div class="flipper">
+		<div class="front">
+			<ng-content select='my-flip-front-side'></ng-content>
+		</div>
+		<div class="back">
+			<ng-content select='my-flip-back-side'></ng-content>
+		</div>
+	</div>
+</div>

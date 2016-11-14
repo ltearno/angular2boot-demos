@@ -1,0 +1,14 @@
+<table *ngIf='memos'>
+	<tr *ngFor='let memo of memos'>
+		<td>{{memo.title}}</td>
+		<td>
+			<button (click)='detailMemo(memo)' class="btn-floating btn-small waves-effect waves-light yellow">
+				<i class="material-icons left">search</i>
+			</button>
+			<button (click)='deleteMemo(memo.id)' class="btn-floating btn-small waves-effect waves-light red">
+				<i class="material-icons left">delete</i>
+			</button>
+		</td>
+	</tr>
+</table>
+<button (click)='createMemo()' class="waves-effect waves-light btn">Add</button>
