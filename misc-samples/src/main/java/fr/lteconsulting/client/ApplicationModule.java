@@ -16,6 +16,8 @@ import fr.lteconsulting.client.mainchild.ChildComponent;
 import fr.lteconsulting.client.mainchild.MainComponent;
 import fr.lteconsulting.client.missioncontrol.AstronautMissionComponent;
 import fr.lteconsulting.client.missioncontrol.MissionControlComponent;
+import fr.lteconsulting.client.pipes.CodePointsPipe;
+import fr.lteconsulting.client.pipes.PipesComponent;
 import fr.lteconsulting.client.versions.VersionChildComponent;
 import fr.lteconsulting.client.versions.VersionParentComponent;
 import jsinterop.annotations.JsType;
@@ -48,7 +50,10 @@ import jsinterop.annotations.JsType;
 
 				DirectivesComponent.class,
 
-				AnimationsComponent.class
+				AnimationsComponent.class,
+
+				PipesComponent.class,
+				CodePointsPipe.class
 		},
 		providers = {
 				LoggerService.class

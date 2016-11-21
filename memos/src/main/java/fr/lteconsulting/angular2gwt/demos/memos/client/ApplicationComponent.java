@@ -5,8 +5,7 @@ import jsinterop.annotations.JsType;
 
 @Component(
 		selector = "my-app",
-		template = "Memos demo<br/>"
-				+ "<router-outlet></router-outlet>",
+		templateUrl = "ApplicationComponent.html",
 		styleUrls = "ApplicationComponent.css",
 		providers = MemosService.class )
 @JsType

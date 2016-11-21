@@ -18,6 +18,7 @@ import jsinterop.annotations.JsType;
 				+ "<li (click)='selected=5'>hero bios and contacts (ngContent and hosted services)</li>"
 				+ "<li (click)='selected=6'>directives</li>"
 				+ "<li (click)='selected=7'>animations</li>"
+				+ "<li (click)='selected=8'>pipes</li>"
 				+ "</ul>"
 				+ "</div>"
 				+ "<div class='col'>"
@@ -29,6 +30,7 @@ import jsinterop.annotations.JsType;
 				+ "<hero-bios-and-contacts *ngIf='selected==5'></hero-bios-and-contacts>"
 				+ "<directives *ngIf='selected==6'></directives>"
 				+ "<animations *ngIf='selected==7'></animations>"
+				+ "<pipes *ngIf='selected==8'></pipes>"
 				+ "</div>"
 				+ "</div>",
 		styleUrls = "application.component.css" )
