@@ -1,0 +1,141 @@
+This is a demo of PrimeNg components used in Java 8 through Angular 2
+Boot !
+
+<div>
+	<h2>AutoCompleteDemo</h2>
+	<my-autocomplete-demo></my-autocomplete-demo>
+</div>
+
+<div>
+	<h2>CheckboxDemo</h2>
+	<my-checkbox-demo></my-checkbox-demo>
+</div>
+
+<!--
+Quill editor library is required 
+<div>
+	<h2>EditorDemo</h2>
+	<my-editor-demo></my-editor-demo>
+</div>
+ -->
+<div>
+	<h2>InputSwitch</h2>
+
+	<h3 class="first">Basic - {{checked1}}</h3>
+	<p-inputSwitch [(ngModel)]="checked1"></p-inputSwitch>
+
+	<h3>
+		Labels - <span> {{checked2}}</span>
+	</h3>
+	<p-inputSwitch onLabel="Yes" offLabel="No" [(ngModel)]="checked2"></p-inputSwitch>
+</div>
+
+
+<div>
+	<h2>InputMask</h2>
+
+	<div class="ui-g ui-fluid">
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>Basic</span>
+			<p-inputMask mask="99-999999" [(ngModel)]="val1"
+				placeholder="99-999999"></p-inputMask>
+		</div>
+
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>SSN</span>
+			<p-inputMask mask="999-99-9999" [(ngModel)]="val2"
+				placeholder="999-99-9999"></p-inputMask>
+		</div>
+
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>Date</span>
+			<p-inputMask mask="99/99/9999" [(ngModel)]="val3"
+				placeholder="99/99/9999" slotChar="mm/dd/yyyy"></p-inputMask>
+		</div>
+
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>Phone</span>
+			<p-inputMask mask="(999) 999-9999" [(ngModel)]="val4"
+				placeholder="(999) 999-9999"></p-inputMask>
+		</div>
+
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>Phone Ext</span>
+			<p-inputMask mask="(999) 999-9999? x99999" [(ngModel)]="val5"
+				placeholder="(999) 999-9999? x99999"></p-inputMask>
+		</div>
+
+		<div class="ui-g-12 ui-md-6 ui-lg-4">
+			<span>Serial Number</span>
+			<p-inputMask mask="a*-999-a999" [(ngModel)]="val6"
+				placeholder="a*-999-a999"></p-inputMask>
+		</div>
+	</div>
+</div>
+
+<h2>InputText</h2>
+
+<input [(ngModel)]='title' pInputText />
+
+<h2>MultipleSelect</h2>
+
+<p-multiSelect [options]="cities" [(ngModel)]="selectedCities"></p-multiSelect>
+
+<div>
+	<h2>Password</h2>
+	<h3 class="first">Password</h3>
+	<input pPassword type="password" />
+</div>
+
+<!-- <div> -->
+<!-- 	<h2>RadioButton</h2> -->
+<!-- 	<my-radiobutton-demo></my-radiobutton-demo> -->
+<!-- </div> -->
+
+<div>
+	<h2>SplitButton</h2>
+	<my-splitbutton-demo></my-splitbutton-demo>
+</div>
+
+<h2>Accordion</h2>
+
+<p-accordion> <p-accordionTab header="Header 1">
+Content 1 </p-accordionTab> <p-accordionTab header="Header 2"> Content 2
+</p-accordionTab> <p-accordionTab header="Header 3"> <header>
+	Header Content </header> Body Content </p-accordionTab> </p-accordion>
+
+<div>
+	<h2>Data table</h2>
+	<my-datatable-demo></my-datatable-demo>
+</div>
+
+<div>
+	<h2>Tree table</h2>
+	<my-treetable-demo></my-treetable-demo>
+</div>
+
+<div>
+	<h2>GMap</h2>
+	<my-gmap-demo></my-gmap-demo>
+</div>
+
+<div>
+	<h2>Dialog</h2>
+	<p-dialog header="Godfather I" [(visible)]="display" modal="modal" width="300" responsive="true">
+	    <p>The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
+	       His beloved son Michael has just come home from the war, but does not intend to become part of his father's business. 
+	       Through Michael's life the nature of the family business becomes clear. The business of the family is just like the head of the family, 
+	       kind and benevolent to those who give respect, 
+	       but given to ruthless violence whenever anything stands against the good of the family.</p>
+	        <footer>
+	            <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+	                <button type="button" pButton icon="fa-close" (click)="display=false" label="No"></button>
+	                <button type="button" pButton icon="fa-check" (click)="display=false" label="Yes"></button>
+	            </div>
+	        </footer>
+	</p-dialog>
+	
+	<button type="text" (click)="showDialog()" pButton icon="fa-external-link-square" label="Show"></button>
+</div>
+
+<router-outlet></router-outlet>
