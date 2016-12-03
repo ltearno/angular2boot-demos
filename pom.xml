@@ -24,15 +24,17 @@
 		<gwt.plugin.version>2.8.0</gwt.plugin.version>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<angular2-gwt.version>1.7</angular2-gwt.version>
 	</properties>
 	
     <modules>
         <module>canvas</module>
 		<module>memos</module>
 		<module>misc-samples</module>
+		<module>my-first-tree-orchard</module>
+		<module>primeng-demo</module>
 		<module>widgets-integration</module>
 		<module>widgets-integration-wayback</module>
-		<module>my-first-tree-orchard</module>
     </modules>
 	
 	<dependencies>
@@ -64,7 +66,7 @@
 		<dependency>
 			<groupId>fr.lteconsulting</groupId>
 			<artifactId>angular2-gwt</artifactId>
-			<version>1.7</version>
+			<version>${angular2-gwt.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
