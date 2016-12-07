@@ -14,15 +14,6 @@
 	<name>angular2gwt-memos</name>
 	<packaging>jar</packaging>
 
-	<dependencies>
-		<dependency>
-			<groupId>fr.lteconsulting</groupId>
-			<artifactId>angular2-gwt</artifactId>
-			<version>1.7-SNAPSHOT</version>
-			<scope>provided</scope>
-		</dependency>
-	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
