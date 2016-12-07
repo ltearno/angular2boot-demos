@@ -1,6 +1,9 @@
 package fr.lteconsulting.client;
 
+import com.google.gwt.core.client.GWT;
+
 import fr.lteconsulting.angular2gwt.ng.core.Component;
+import fr.lteconsulting.client.interop.DomSanitizationService;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -19,6 +22,7 @@ import jsinterop.annotations.JsType;
 				+ "<li (click)='selected=6'>directives</li>"
 				+ "<li (click)='selected=7'>animations</li>"
 				+ "<li (click)='selected=8'>pipes</li>"
+				+ "<li (click)='selected=9'>sanitization</li>"
 				+ "</ul>"
 				+ "</div>"
 				+ "<div class='col'>"
@@ -31,6 +35,7 @@ import jsinterop.annotations.JsType;
 				+ "<directives *ngIf='selected==6'></directives>"
 				+ "<animations *ngIf='selected==7'></animations>"
 				+ "<pipes *ngIf='selected==8'></pipes>"
+				+ "<sanitization *ngIf='selected==9'></sanitization>"
 				+ "</div>"
 				+ "</div>",
 		styleUrls = "application.component.css" )
@@ -38,4 +43,11 @@ import jsinterop.annotations.JsType;
 public class ApplicationComponent
 {
 	public int selected = 0;
+
+	public ApplicationComponent( DomSanitizationService sanitizationService )
+	{
+		GWT.log( "service " + sanitizationService );
+		
+		GWT.log( "r: " + sanitizationService.bypassSecurityTrustHtml( "" ) );
+	}
 }
