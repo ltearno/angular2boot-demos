@@ -1,9 +1,6 @@
 package fr.lteconsulting.client;
 
-import com.google.gwt.core.client.GWT;
-
 import fr.lteconsulting.angular2gwt.ng.core.Component;
-import fr.lteconsulting.client.interop.DomSanitizationService;
 import jsinterop.annotations.JsType;
 
 @Component(
@@ -44,10 +41,7 @@ public class ApplicationComponent
 {
 	public int selected = 0;
 
-	public ApplicationComponent( DomSanitizationService sanitizationService )
+	public ApplicationComponent()
 	{
-		GWT.log( "service " + sanitizationService );
-		
-		GWT.log( "r: " + sanitizationService.bypassSecurityTrustHtml( "" ) );
 	}
 }

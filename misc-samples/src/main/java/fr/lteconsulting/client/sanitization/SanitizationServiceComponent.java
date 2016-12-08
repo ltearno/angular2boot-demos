@@ -2,9 +2,9 @@ package fr.lteconsulting.client.sanitization;
 
 import com.google.gwt.core.shared.GWT;
 
+import fr.lteconsulting.angular2gwt.client.interop.ng.core.SecurityContext;
+import fr.lteconsulting.angular2gwt.client.interop.ng.platformBrowser.DomSanitizationService;
 import fr.lteconsulting.angular2gwt.ng.core.Component;
-import fr.lteconsulting.client.interop.DomSanitizationService;
-import fr.lteconsulting.client.interop.SecurityContext;
 import jsinterop.annotations.JsProperty;
 import jsinterop.annotations.JsType;
 
